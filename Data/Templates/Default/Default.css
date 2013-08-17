@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------------------- */
+/* Form Elements                                                              */
+
+.web-table-default-form-background
+{
+  background-color: #000;
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.web-table-default-form
+{
+  background-color: #FFF;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  text-align: justify;
+  width: 500px;
+  z-index: 2;
+}
+
+.web-table-default
+{
+  margin: 10px;
+}
+
+.web-table-default-row
+{
+}
+
+.web-table-default-cell
+{
+  display: table-cell;
+  padding: 10px;
+  min-width: 450px;
+}
+
+.web-table-default-group
+{
+  padding-top: 10px;
+}
+
+.web-table-default-item
+{
+  padding-left: 10px;
+}

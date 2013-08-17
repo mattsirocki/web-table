@@ -1,0 +1,1 @@
+{"alias":"four-cells","name":"four-cells","template":"Default","rows":[{"index":0,"name":"Row #0","cells":[{"index":0,"name":"Cell #0-0"},{"index":1,"name":"Cell #0-1"}]},{"index":1,"name":"Row #1","cells":[{"index":0,"name":"Cell #1-0"},{"index":1,"name":"Cell #1-1"}]}]}

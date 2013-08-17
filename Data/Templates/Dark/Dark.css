@@ -1,0 +1,278 @@
+@CHARSET "UTF-8";
+
+/* -------------------------------------------------------------------------- */
+/* General Elements                                                           */
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  height: 100%;
+}
+
+.web-table-dark-button
+{ cursor: pointer; }
+.web-table-dark-button:hover
+{ background-color: rgba(0, 0, 0, 0.3); }
+.web-table-dark-button:active
+{ background-color: rgba(0, 0, 0, 0.3); }
+
+/* -------------------------------------------------------------------------- */
+/* Form Elements                                                              */
+
+.web-table-dark-form-background
+{
+  background-color: #000000;
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.web-table-dark-form
+{
+  background: black url('./assets/linen.png') repeat;
+  box-shadow: #000 0px 0px 20px;
+  color: #FFF;
+  font-family: Lucida Grande, sans-serif;
+  font-size: .8em;
+  line-height: 100%;
+  display: none;
+  position: absolute;
+  text-align: justify;
+  text-shadow: -1px -1px 0px #000;
+  width: 500px;
+  z-index: 2;
+}
+
+.web-table-dark-form-divider
+{
+  background-color: #000;
+  clear: both;
+  height: 1px;
+  opacity: 0.6;
+}
+
+.web-table-dark-form form > [id$="title"]
+{
+  font-family: Georgia, serif;
+  font-size: 2em;
+  padding: 30px;
+}
+.web-table-dark-form form > [id$="message"],
+.web-table-dark-form form > [id$="items"],
+.web-table-dark-form form > [id$="note"]
+{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.web-table-dark-form form > [id$="message"]
+{
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 20px 20px 0px 20px;
+}
+
+
+.web-table-dark-form form > [id$="items"]
+{
+  box-sizing: border-box;
+  display: table;
+  padding: 5px 20px;
+  width: 100%;
+}
+.web-table-dark-form-item
+{ display: table-row; }
+.web-table-dark-form-item-name,
+.web-table-dark-form-item-input
+{
+  display: table-cell;
+  padding: 10px 5px;
+}
+.web-table-dark-form-item-name
+{ vertical-align: middle; }
+.web-table-dark-form-item-name,
+.web-table-dark-form-item-input > input
+{
+  font-size: 1em;
+  font-weight: bold;
+}
+.web-table-dark-form-item-input > textarea
+{  }
+.web-table-dark-form-item-name
+{ text-align: right; }
+.web-table-dark-form-item-input,
+.web-table-dark-form-item-input > input,
+.web-table-dark-form-item-input > textarea
+{ width: 100%; }
+.web-table-dark-form-item-input > textarea
+{ height: 60px; }
+.web-table-dark-form-item-note
+{ font-size: x-small; }
+
+.web-table-dark-form form > [id$="note"]
+{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: x-small;
+  padding: 0px 20px 10px 20px;
+  overflow: scroll;
+}
+.web-table-dark-form form > [id$="note"] :first-child
+{ margin: 0px 0px 10px 0px; }
+
+
+.web-table-dark-form form > [id$="buttons"]
+{
+  margin: 0px -10px;
+  padding: 20px;
+  text-align: right;
+}
+.web-table-dark-form form > [id$="buttons"] > input[type="button"],
+.web-table-dark-form form > [id$="buttons"] > input[type="submit"]
+{
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0px;
+  box-shadow: #000 1px 1px 1px;
+  box-sizing: border-box;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 30px;
+  margin: 0px 10px;
+  padding: 0px 10px;
+  text-shadow: #000 -1px -1px 0px;
+}
+.web-table-dark-form form > [id$="buttons"] > input[type="button"]:hover,
+.web-table-dark-form form > [id$="buttons"] > input[type="submit"]:hover
+{ background-color: rgba(0, 0, 0, 0.5); }
+.web-table-dark-form form > [id$="buttons"] > input[type="button"]:active,
+.web-table-dark-form form > [id$="buttons"] > input[type="submit"]:active
+{ background-color: rgba(0, 0, 0, 0.7); }
+
+/* -------------------------------------------------------------------------- */
+/* Menu Elements                                                              */
+
+.web-table-dark-menu
+{
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  font-size: 0.75em;
+}
+
+.web-table-dark-menu > .web-table-dark-button
+{
+  display: table-cell;
+  padding: 5px 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Table Elements                                                             */
+
+.web-table-dark
+{
+  background: black url('./assets/linen.png') repeat;
+  color: #FFF;
+  display: table;
+  font-family: Georgia;
+  font-size: 1em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: 100%;
+  min-width: 100%;
+  text-shadow: #000 -1px -1px 0px;
+}
+
+.web-table-dark > [id$="content"]
+{
+  font-size: 2em;
+  padding: 1em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Row Elements                                                               */
+
+.web-table-dark-row
+{ margin: 20px; }
+
+.web-table-dark-row > [id$="content"]
+{
+  font-size: 1.5em;
+  padding: 0.75em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cell Elements                                                              */
+
+.web-table-dark-cell
+{
+  display: table-cell;
+  min-width: 500px;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.web-table-dark-cell > [id$="content"]
+{
+  font-size: 1.25em;
+  padding: 0.625em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Group Elements                                                             */
+
+.web-table-dark-group
+{
+  margin-left: 20px;
+}
+
+.web-table-dark-group > [id$="content"]
+{
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Item Elements                                                              */
+
+.web-table-dark-item
+{
+  margin-left: 20px;
+}
+
+.web-table-dark-item > [id$="content"]
+{
+  cursor: auto;
+  font-size: 0.75em;
+  line-height: 20px;
+  min-height: 20px;
+}
+.web-table-dark-item > [id$="content"] input[type="checkbox"]
+{
+    margin:0;
+    position: relative;
+    top: 1px;
+}
+.web-table-dark-item > [id$="content"] label
+{
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0px 10px;
+}
+
+.web-table-dark-item > [id$="content"] > [id$="text"]
+{}
+
+.web-table-dark-item dl dt
+{
+  float: left;
+}
+
+.web-table-dark-item dl dd
+{
+  padding-left: 15px;
+}
