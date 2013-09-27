@@ -1,7 +1,7 @@
 web-table
 =========
 
-Web Table is a simple php application which allows you to create dynamic tables of information. These tables are templatable and can be edited on-the-fly.
+Web Table is a simple PHP application which allows you to create dynamic tables of information. These tables are templatable and can be edited via on-the-fly AJAX calls. They are saved to disk as `*.tbl` files using JSON. These data files can easily be read into arrays via `json_decode()` in PHP. They also can be read into complex Table objects via the `Table::load()` method.
 
 Getting Started
 ---------------
