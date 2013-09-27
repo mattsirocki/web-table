@@ -82,6 +82,8 @@ class Bootstrap extends Object
 
     /**
      * Pull!
+     *
+     * @return void
      */
     public static function pull()
     {
@@ -123,6 +125,42 @@ class Bootstrap extends Object
         if (WS !== self::WS)
             throw Exception::factory('BOOTSTRAP-CONSTANT')->
                 localize('WS', self::_e(WS), self::_e(self::WS));
+
+        if (get_magic_quotes_gpc())
+            self::_disable_magic_quotes();
+    }
+
+    /**
+     * Disable Magic Quotes
+     *
+     * As taken from the PHP manual page, located at {@link http://php.net/manual/en/security.magicquotes.disabling.php Disabling Magic Quotes},
+     * this function "disables" magic quotes by stripping the slashes from the
+     * $_GET, $_POST, $_COOKIE, and $_REQUEST arrays.
+     *
+     * @return void
+     */
+    protected static function _disable_magic_quotes()
+    {
+        trigger_error('"Disabling" Magic Quotes');
+
+        $process = array(&$_GET, &$_POST, &$_COOKIE, &$_REQUEST);
+
+        while (list($key, $val) = each($process))
+        {
+            foreach ($val as $k => $v)
+            {
+                unset($process[$key][$k]);
+
+                if (is_array($v))
+                {
+                    $process[$key][stripslashes($k)] = $v;
+                    $process[] = &$process[$key][stripslashes($k)];
+                }
+                else
+                    $process[$key][stripslashes($k)] = stripslashes($v);
+            }
+        }
+        unset($process);
     }
 }
 

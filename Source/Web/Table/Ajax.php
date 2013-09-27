@@ -351,25 +351,21 @@ abstract class Ajax
     {
         try
         {
-            // Extract Request Data
-            $data = json_decode($_POST['web-table'], true);
-
             // Load the Autoloader
             require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Autoloader.php';
+
+            // Extract Request Data
+            $data = json_decode($_POST['web-table'], true);
 
             // Start/Refresh the Session
             @session_start();
 
-            // Check Magic Quotes...
-            if (get_magic_quotes_gpc())
-                throw Exception::factory('AJAX-MAGIC-QUOTES');
-
             // Build Class Name
-            $class = '\\Web\\Table\\Ajax\\'.$data['operation'];
+            $class = '\\Web\\Table\\Ajax\\' . $data['operation'];
 
             // Check if Handler Exists
-            //if (!class_exists($class, true))
-            //    throw Exception::factory('AJAX-MISSING-HANDLER')->localize($data['operation']);
+            if (!class_exists($class, true))
+                throw Exception::factory('AJAX-MISSING-HANDLER')->localize($data['operation']);
 
             // Instantiate Ajax Handler
             $ajax = new $class($data);
