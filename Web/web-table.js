@@ -24,31 +24,6 @@ var WebTable = {};
 //------------------------------------------------------------------------------
 
 /**
- * Perform Initialization Tasks
- * 
- * @param string root
- *     Accepts the URL to the Web Table project root. Preferably without the
- *     ending delimiter. For example, 'web_table', rather than 'web_table/'.
- * 
- * @returns void
- */
-WebTable.initialize = function(root)
-{
-    // Check if jQuery is Loaded
-    if (!jQuery)
-        return;
-
-    // Initialize Root Path
-    WebTable.root = root;
-    
-    // Initialize System Variables
-    WebTable._cache = {};
-    
-    // Reset the Session
-    WebTable._request('Initialize', [root]);
-}
-
-/**
  * Call this function to load a table into the DOM.
  * 
  * @param string table
@@ -80,6 +55,36 @@ WebTable.load = function (table, target, cache, path)
     {
         WebTable._request('LoadTable', [cache, path, target, table])
     });
+}
+
+//------------------------------------------------------------------------------
+// WEB TABLE INITIALIZATION
+//------------------------------------------------------------------------------
+
+/**
+ * Perform Initialization Tasks
+ * 
+ * @returns void
+ */
+WebTable._initialize = function()
+{
+    // Check if jQuery is Loaded
+    if (!jQuery)
+        return;
+
+    // Determine Script Root
+    var tags = document.getElementsByTagName('script');
+    var tag  = tags[tags.length - 1]
+    var root = tag.src.split('?')[0].split('/').slice(0, -2).join('/');
+
+    // Initialize Root Path
+    WebTable.root = root;
+    
+    // Initialize System Variables
+    WebTable._cache = {};
+    
+    // Reset the Session
+    WebTable._request('Initialize', [root]);
 }
 
 //------------------------------------------------------------------------------
@@ -374,3 +379,9 @@ WebTable._alert = function (title, message)
 {
     alert('[Web Table] - ' + title + '\n\n' + message);
 }
+
+//------------------------------------------------------------------------------
+// EXECUTE INITIALIZATION
+//------------------------------------------------------------------------------
+
+WebTable._initialize();
